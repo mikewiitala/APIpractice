@@ -10,7 +10,7 @@ class Actor extends Model
     protected $fillable = ['name'];
 
 
-    public function Movie() {
-      return $this->belongsToMany('Movies', 'pivot_table');
+    public function Movies() {
+      return $this->belongsToMany('App\Movie', 'actor_movie');
     }
 }

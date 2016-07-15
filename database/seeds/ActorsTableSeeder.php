@@ -13,7 +13,7 @@ class ActorsTableSeeder extends Seeder
 
        foreach(range(1,40) as $index) {
          Actor::create([
-           'name' => $faker->name()
+           'name' => $faker->lastName()
          ]);
        }
     }

@@ -10,17 +10,17 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+//Form::open(array('url' => 'site1.app/api/deletemovie/{id}', 'method'=>'delete'))
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::resource('movies', 'MovieController@getMovieInfo');
-// Route::resource('actors', 'ActorController@getActorInfo');
-Route::get('api/getactorinfo/{actorname}', 'ActorController@getActorInfo');
-Route::get('api/getactorinfo/{moviename}', 'MovieController@getMovieInfo');
 
-Route::put('api/addactor/{actorname}', 'ActorController@putActor');
-Route::put('api/addmovie/{moviename}/{movieyear}', 'MovieController@putMovie');
-Route::delete('api/deleteactor/{id}', 'ActorController@deleteActor');
-Route::delete('api/deletemovie/{id}', 'MovieController@deleteMovie');
+Route::get('api/getactorinfo/{actorname}', 'ActorController@getActorInfo');
+Route::get('api/getmovieinfo/{moviename}', 'MovieController@getMovieInfo');
+
+Route::get('api/addactor/{actorname}', 'ActorController@putActor');
+Route::get('api/addmovie/{moviename}/{movieyear}', 'MovieController@putMovie');
+Route::get('api/deleteactor/{id}', 'ActorController@deleteActor');
+Route::get('api/deletemovie/{id}', 'MovieController@deleteMovie');
